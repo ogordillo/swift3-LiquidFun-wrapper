@@ -1,0 +1,530 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		22281D691EC96728002DA3A9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22281D681EC96728002DA3A9 /* AppDelegate.swift */; };
+		22281D6B1EC96728002DA3A9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22281D6A1EC96728002DA3A9 /* ViewController.swift */; };
+		22281D6E1EC96729002DA3A9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 22281D6C1EC96729002DA3A9 /* Main.storyboard */; };
+		22281D701EC96729002DA3A9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 22281D6F1EC96729002DA3A9 /* Assets.xcassets */; };
+		22281D731EC96729002DA3A9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 22281D711EC96729002DA3A9 /* LaunchScreen.storyboard */; };
+		22281D7E1EC96729002DA3A9 /* OrlyLiquidMetalTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22281D7D1EC96729002DA3A9 /* OrlyLiquidMetalTests.swift */; };
+		22281D891EC96729002DA3A9 /* OrlyLiquidMetalUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22281D881EC96729002DA3A9 /* OrlyLiquidMetalUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		22281D7A1EC96729002DA3A9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 22281D5D1EC96728002DA3A9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 22281D641EC96728002DA3A9;
+			remoteInfo = OrlyLiquidMetal;
+		};
+		22281D851EC96729002DA3A9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 22281D5D1EC96728002DA3A9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 22281D641EC96728002DA3A9;
+			remoteInfo = OrlyLiquidMetal;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		22281D651EC96728002DA3A9 /* OrlyLiquidMetal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OrlyLiquidMetal.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		22281D681EC96728002DA3A9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		22281D6A1EC96728002DA3A9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		22281D6D1EC96729002DA3A9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		22281D6F1EC96729002DA3A9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		22281D721EC96729002DA3A9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		22281D741EC96729002DA3A9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		22281D791EC96729002DA3A9 /* OrlyLiquidMetalTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OrlyLiquidMetalTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		22281D7D1EC96729002DA3A9 /* OrlyLiquidMetalTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrlyLiquidMetalTests.swift; sourceTree = "<group>"; };
+		22281D7F1EC96729002DA3A9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		22281D841EC96729002DA3A9 /* OrlyLiquidMetalUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OrlyLiquidMetalUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		22281D881EC96729002DA3A9 /* OrlyLiquidMetalUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrlyLiquidMetalUITests.swift; sourceTree = "<group>"; };
+		22281D8A1EC96729002DA3A9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		22281D621EC96728002DA3A9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		22281D761EC96729002DA3A9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		22281D811EC96729002DA3A9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		22281D5C1EC96728002DA3A9 = {
+			isa = PBXGroup;
+			children = (
+				22281D671EC96728002DA3A9 /* OrlyLiquidMetal */,
+				22281D7C1EC96729002DA3A9 /* OrlyLiquidMetalTests */,
+				22281D871EC96729002DA3A9 /* OrlyLiquidMetalUITests */,
+				22281D661EC96728002DA3A9 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		22281D661EC96728002DA3A9 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				22281D651EC96728002DA3A9 /* OrlyLiquidMetal.app */,
+				22281D791EC96729002DA3A9 /* OrlyLiquidMetalTests.xctest */,
+				22281D841EC96729002DA3A9 /* OrlyLiquidMetalUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		22281D671EC96728002DA3A9 /* OrlyLiquidMetal */ = {
+			isa = PBXGroup;
+			children = (
+				22281D681EC96728002DA3A9 /* AppDelegate.swift */,
+				22281D6A1EC96728002DA3A9 /* ViewController.swift */,
+				22281D6C1EC96729002DA3A9 /* Main.storyboard */,
+				22281D6F1EC96729002DA3A9 /* Assets.xcassets */,
+				22281D711EC96729002DA3A9 /* LaunchScreen.storyboard */,
+				22281D741EC96729002DA3A9 /* Info.plist */,
+			);
+			path = OrlyLiquidMetal;
+			sourceTree = "<group>";
+		};
+		22281D7C1EC96729002DA3A9 /* OrlyLiquidMetalTests */ = {
+			isa = PBXGroup;
+			children = (
+				22281D7D1EC96729002DA3A9 /* OrlyLiquidMetalTests.swift */,
+				22281D7F1EC96729002DA3A9 /* Info.plist */,
+			);
+			path = OrlyLiquidMetalTests;
+			sourceTree = "<group>";
+		};
+		22281D871EC96729002DA3A9 /* OrlyLiquidMetalUITests */ = {
+			isa = PBXGroup;
+			children = (
+				22281D881EC96729002DA3A9 /* OrlyLiquidMetalUITests.swift */,
+				22281D8A1EC96729002DA3A9 /* Info.plist */,
+			);
+			path = OrlyLiquidMetalUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		22281D641EC96728002DA3A9 /* OrlyLiquidMetal */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 22281D8D1EC96729002DA3A9 /* Build configuration list for PBXNativeTarget "OrlyLiquidMetal" */;
+			buildPhases = (
+				22281D611EC96728002DA3A9 /* Sources */,
+				22281D621EC96728002DA3A9 /* Frameworks */,
+				22281D631EC96728002DA3A9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = OrlyLiquidMetal;
+			productName = OrlyLiquidMetal;
+			productReference = 22281D651EC96728002DA3A9 /* OrlyLiquidMetal.app */;
+			productType = "com.apple.product-type.application";
+		};
+		22281D781EC96729002DA3A9 /* OrlyLiquidMetalTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 22281D901EC96729002DA3A9 /* Build configuration list for PBXNativeTarget "OrlyLiquidMetalTests" */;
+			buildPhases = (
+				22281D751EC96729002DA3A9 /* Sources */,
+				22281D761EC96729002DA3A9 /* Frameworks */,
+				22281D771EC96729002DA3A9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				22281D7B1EC96729002DA3A9 /* PBXTargetDependency */,
+			);
+			name = OrlyLiquidMetalTests;
+			productName = OrlyLiquidMetalTests;
+			productReference = 22281D791EC96729002DA3A9 /* OrlyLiquidMetalTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		22281D831EC96729002DA3A9 /* OrlyLiquidMetalUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 22281D931EC96729002DA3A9 /* Build configuration list for PBXNativeTarget "OrlyLiquidMetalUITests" */;
+			buildPhases = (
+				22281D801EC96729002DA3A9 /* Sources */,
+				22281D811EC96729002DA3A9 /* Frameworks */,
+				22281D821EC96729002DA3A9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				22281D861EC96729002DA3A9 /* PBXTargetDependency */,
+			);
+			name = OrlyLiquidMetalUITests;
+			productName = OrlyLiquidMetalUITests;
+			productReference = 22281D841EC96729002DA3A9 /* OrlyLiquidMetalUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		22281D5D1EC96728002DA3A9 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0830;
+				LastUpgradeCheck = 0830;
+				ORGANIZATIONNAME = "Orlando Gordillo";
+				TargetAttributes = {
+					22281D641EC96728002DA3A9 = {
+						CreatedOnToolsVersion = 8.3.2;
+						ProvisioningStyle = Automatic;
+					};
+					22281D781EC96729002DA3A9 = {
+						CreatedOnToolsVersion = 8.3.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 22281D641EC96728002DA3A9;
+					};
+					22281D831EC96729002DA3A9 = {
+						CreatedOnToolsVersion = 8.3.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 22281D641EC96728002DA3A9;
+					};
+				};
+			};
+			buildConfigurationList = 22281D601EC96728002DA3A9 /* Build configuration list for PBXProject "OrlyLiquidMetal" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 22281D5C1EC96728002DA3A9;
+			productRefGroup = 22281D661EC96728002DA3A9 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				22281D641EC96728002DA3A9 /* OrlyLiquidMetal */,
+				22281D781EC96729002DA3A9 /* OrlyLiquidMetalTests */,
+				22281D831EC96729002DA3A9 /* OrlyLiquidMetalUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		22281D631EC96728002DA3A9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				22281D731EC96729002DA3A9 /* LaunchScreen.storyboard in Resources */,
+				22281D701EC96729002DA3A9 /* Assets.xcassets in Resources */,
+				22281D6E1EC96729002DA3A9 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		22281D771EC96729002DA3A9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		22281D821EC96729002DA3A9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		22281D611EC96728002DA3A9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				22281D6B1EC96728002DA3A9 /* ViewController.swift in Sources */,
+				22281D691EC96728002DA3A9 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		22281D751EC96729002DA3A9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				22281D7E1EC96729002DA3A9 /* OrlyLiquidMetalTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		22281D801EC96729002DA3A9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				22281D891EC96729002DA3A9 /* OrlyLiquidMetalUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		22281D7B1EC96729002DA3A9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 22281D641EC96728002DA3A9 /* OrlyLiquidMetal */;
+			targetProxy = 22281D7A1EC96729002DA3A9 /* PBXContainerItemProxy */;
+		};
+		22281D861EC96729002DA3A9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 22281D641EC96728002DA3A9 /* OrlyLiquidMetal */;
+			targetProxy = 22281D851EC96729002DA3A9 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		22281D6C1EC96729002DA3A9 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				22281D6D1EC96729002DA3A9 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		22281D711EC96729002DA3A9 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				22281D721EC96729002DA3A9 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		22281D8B1EC96729002DA3A9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		22281D8C1EC96729002DA3A9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		22281D8E1EC96729002DA3A9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = OrlyLiquidMetal/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.orly.OrlyLiquidMetal;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		22281D8F1EC96729002DA3A9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = OrlyLiquidMetal/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.orly.OrlyLiquidMetal;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		22281D911EC96729002DA3A9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = OrlyLiquidMetalTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.orly.OrlyLiquidMetalTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/OrlyLiquidMetal.app/OrlyLiquidMetal";
+			};
+			name = Debug;
+		};
+		22281D921EC96729002DA3A9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = OrlyLiquidMetalTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.orly.OrlyLiquidMetalTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/OrlyLiquidMetal.app/OrlyLiquidMetal";
+			};
+			name = Release;
+		};
+		22281D941EC96729002DA3A9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				INFOPLIST_FILE = OrlyLiquidMetalUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.orly.OrlyLiquidMetalUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = OrlyLiquidMetal;
+			};
+			name = Debug;
+		};
+		22281D951EC96729002DA3A9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				INFOPLIST_FILE = OrlyLiquidMetalUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.orly.OrlyLiquidMetalUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = OrlyLiquidMetal;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		22281D601EC96728002DA3A9 /* Build configuration list for PBXProject "OrlyLiquidMetal" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				22281D8B1EC96729002DA3A9 /* Debug */,
+				22281D8C1EC96729002DA3A9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		22281D8D1EC96729002DA3A9 /* Build configuration list for PBXNativeTarget "OrlyLiquidMetal" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				22281D8E1EC96729002DA3A9 /* Debug */,
+				22281D8F1EC96729002DA3A9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		22281D901EC96729002DA3A9 /* Build configuration list for PBXNativeTarget "OrlyLiquidMetalTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				22281D911EC96729002DA3A9 /* Debug */,
+				22281D921EC96729002DA3A9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		22281D931EC96729002DA3A9 /* Build configuration list for PBXNativeTarget "OrlyLiquidMetalUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				22281D941EC96729002DA3A9 /* Debug */,
+				22281D951EC96729002DA3A9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 22281D5D1EC96728002DA3A9 /* Project object */;
+}
