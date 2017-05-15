@@ -1,6 +1,6 @@
 # LiquidFun_Swift3_iOS
 
-Wrapper for liquidfun to work with Swift3
+iOS Swift3 Wrapper for Google liquidfun
 
-based on the tutorial: https://www.raywenderlich.com/85515/liquidfun-tutorial-1 (which works only with < swift2
+update to the tutorial: https://www.raywenderlich.com/85515/liquidfun-tutorial-1
 
