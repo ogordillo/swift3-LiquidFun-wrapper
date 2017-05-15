@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreMotion
 
 class ViewController: UIViewController {
 
@@ -26,12 +27,15 @@ class ViewController: UIViewController {
     var pipelineState: MTLRenderPipelineState! = nil
     var commandQueue: MTLCommandQueue! = nil
     
+    let motionManager: CMMotionManager = CMMotionManager()
+    
     
     override func viewDidLoad() {
         LiquidFun.createWorld(withGravity: Vector2D(x: 0, y:-gravity))
         super.viewDidLoad()
        
         particleSystem = LiquidFun.createParticleSystem(withRadius:particleRadius / ptmRatio, dampingStrength: 0.2, gravityScale: 1, density: 1.2)
+        LiquidFun.setParticleLimitForSystem(particleSystem, maxParticles: 1500)
         
         
         let screenSize: CGSize = UIScreen.main.bounds.size
@@ -44,11 +48,28 @@ class ViewController: UIViewController {
                                              position: Vector2D(x: screenWidth * 0.5 / ptmRatio, y: screenHeight * 0.5 / ptmRatio),
                                              size: Size2D(width: 50 / ptmRatio, height: 50 / ptmRatio))
         
+        
+        LiquidFun.createEdgeBox(withOrigin: Vector2D(x: 0, y: 0),
+                                          size: Size2D(width: screenWidth / ptmRatio, height: screenHeight / ptmRatio))
+        
+        
         createMetalLayer()
         refreshVertexBuffer()
         refreshUniformBuffer()
         buildRenderPipeline()
         render()
+        
+        let displayLink = CADisplayLink(target: self, selector: #selector(ViewController.update))
+        displayLink.preferredFramesPerSecond = 30
+        displayLink.add(to: RunLoop.current, forMode: RunLoopMode.defaultRunLoopMode)
+        
+        motionManager.startAccelerometerUpdates(to: OperationQueue(),
+                                                       withHandler: { (accelerometerData, error) -> Void in
+                                                        let acceleration = accelerometerData?.acceleration
+                                                        let gravityX = self.gravity * Float((acceleration?.x)!)
+                                                        let gravityY = self.gravity * Float((acceleration?.y)!)
+                                                        LiquidFun.setGravity(Vector2D(x: gravityX, y: gravityY))
+        })
         
     }
 
@@ -61,7 +82,7 @@ class ViewController: UIViewController {
         let count = Int(LiquidFun.particleCount(forSystem: particleSystem))
         print("There are \(count) particles present")
         
-        var positions = (LiquidFun.particlePositions(forSystem: particleSystem)).assumingMemoryBound(to: Vector2D.self)
+        let positions = (LiquidFun.particlePositions(forSystem: particleSystem)).assumingMemoryBound(to: Vector2D.self)
         
         for i in 0..<count {
             let position = positions[i]
@@ -140,16 +161,15 @@ class ViewController: UIViewController {
         pipelineDescriptor.colorAttachments[0].pixelFormat = .bgra8Unorm
         
 
-        var pipelineError  = Error?.self
         
         do{
             try pipelineState = device.makeRenderPipelineState(descriptor: pipelineDescriptor)
-        }catch  is Error{
+        }catch is Error{
             print("error line 145 in viewcontroller")
         }
         
         if (pipelineState == nil) {
-            print("Error occurred when creating render pipeline state: \(pipelineError)");
+//            print("Error occurred when creating render pipeline state: \(pipelineError)");
         }
         
         // 3
@@ -157,7 +177,7 @@ class ViewController: UIViewController {
     }
     
     func render() {
-        var drawable = metalLayer.nextDrawable()
+        let drawable = metalLayer.nextDrawable()
         
         let renderPassDescriptor = MTLRenderPassDescriptor()
         renderPassDescriptor.colorAttachments[0].texture = drawable?.texture
@@ -182,6 +202,27 @@ class ViewController: UIViewController {
         commandBuffer.commit()
     }
     
+    
+    func update(displayLink:CADisplayLink) {
+        autoreleasepool {
+            LiquidFun.worldStep(displayLink.duration, velocityIterations: 8, positionIterations: 3)
+            self.refreshVertexBuffer()
+            self.render()
+        }
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        for touchObject in touches {
+            if let touch = touchObject as? UITouch {
+                let touchLocation = touch.location(in: view)
+                let position = Vector2D(x: Float(touchLocation.x) / ptmRatio,
+                                        y: Float(view.bounds.height - touchLocation.y) / ptmRatio)
+                let size = Size2D(width: 100 / ptmRatio, height: 100 / ptmRatio)
+                LiquidFun.createParticleBox(forSystem: particleSystem, position: position, size: size)
+            }
+            super.touchesBegan(touches, with: event)
+        }
+    }
     
 
 

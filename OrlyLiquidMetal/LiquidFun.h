@@ -36,4 +36,12 @@ typedef struct Vector2D {
 + (int)particleCountForSystem:(void *)particleSystem;
 + (void *)particlePositionsForSystem:(void *)particleSystem;
 
++ (void)worldStep:(CFTimeInterval)timeStep velocityIterations:(int)velocityIterations
+positionIterations:(int)positionIterations;
+
++ (void *)createEdgeBoxWithOrigin:(Vector2D)origin size:(Size2D)size;
++ (void)setGravity:(Vector2D)gravity;
+
++ (void)setParticleLimitForSystem:(void *)particleSystem maxParticles:(int)maxParticles;
+
 @end
