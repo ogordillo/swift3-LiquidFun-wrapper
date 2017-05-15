@@ -29,6 +29,7 @@ vertex VertexOut particle_vertex(const device packed_float2* vertex_array [[buff
     uniforms.ndcMatrix * float4(position.x * uniforms.ptmRatio, position.y * uniforms.ptmRatio, 0, 1);
     vertexOut.pointSize = uniforms.pointSize;
     
+    
     vertexOut.position = uniforms.ndcMatrix * float4(position.x * uniforms.ptmRatio, position.y * uniforms.ptmRatio, 0, 1);
     
     return vertexOut;
@@ -36,7 +37,10 @@ vertex VertexOut particle_vertex(const device packed_float2* vertex_array [[buff
 }
 
 fragment half4 basic_fragment() {
-    return half4(1.0);
+   
+    
+   
+    return half4(1.0, 1.0, 0.0, 1.0);
 }
 
 

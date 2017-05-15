@@ -13,7 +13,7 @@ class ViewController: UIViewController {
 
     let gravity: Float = 9.80665
     let ptmRatio: Float = 32.0
-    let particleRadius: Float = 9
+    let particleRadius: Float = 2
     var particleSystem: UnsafeMutableRawPointer!
     
     var device: MTLDevice! = nil
@@ -34,8 +34,8 @@ class ViewController: UIViewController {
         LiquidFun.createWorld(withGravity: Vector2D(x: 0, y:-gravity))
         super.viewDidLoad()
        
-        particleSystem = LiquidFun.createParticleSystem(withRadius:particleRadius / ptmRatio, dampingStrength: 0.2, gravityScale: 1, density: 1.2)
-        LiquidFun.setParticleLimitForSystem(particleSystem, maxParticles: 1500)
+        particleSystem = LiquidFun.createParticleSystem(withRadius:particleRadius / ptmRatio, dampingStrength: 0.1, gravityScale: 1, density: 1.2)
+        LiquidFun.setParticleLimitForSystem(particleSystem, maxParticles: 4500)
         
         
         let screenSize: CGSize = UIScreen.main.bounds.size
@@ -60,7 +60,7 @@ class ViewController: UIViewController {
         render()
         
         let displayLink = CADisplayLink(target: self, selector: #selector(ViewController.update))
-        displayLink.preferredFramesPerSecond = 30
+        displayLink.preferredFramesPerSecond = 60
         displayLink.add(to: RunLoop.current, forMode: RunLoopMode.defaultRunLoopMode)
         
         motionManager.startAccelerometerUpdates(to: OperationQueue(),
@@ -184,12 +184,14 @@ class ViewController: UIViewController {
         renderPassDescriptor.colorAttachments[0].loadAction = .clear
         renderPassDescriptor.colorAttachments[0].storeAction = .store
         renderPassDescriptor.colorAttachments[0].clearColor =
-            MTLClearColor(red: 0.0, green: 104.0/255.0, blue: 5.0/255.0, alpha: 1.0)
+            MTLClearColor(red: 0.0/255.0, green: 0.0/255.0, blue: 0.0/255.0, alpha: 1.0)
+        
+        
         
         let commandBuffer = commandQueue.makeCommandBuffer()
         let renderEncoder = commandBuffer.makeRenderCommandEncoder(descriptor: renderPassDescriptor)
         
-       
+
             renderEncoder.setRenderPipelineState(pipelineState)
             renderEncoder.setVertexBuffer(vertexBuffer, offset: 0, at: 0)
             renderEncoder.setVertexBuffer(uniformBuffer, offset: 0, at: 1)
