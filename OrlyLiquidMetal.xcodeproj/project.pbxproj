@@ -68,6 +68,7 @@
 		22281ED81EC967D1002DA3A9 /* b2VoronoiDiagram.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 22281E581EC967D1002DA3A9 /* b2VoronoiDiagram.cpp */; };
 		22281ED91EC967D1002DA3A9 /* b2Rope.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 22281E5B1EC967D1002DA3A9 /* b2Rope.cpp */; };
 		22281EDD1EC96BB4002DA3A9 /* LiquidFun.mm in Sources */ = {isa = PBXBuildFile; fileRef = 22281EDC1EC96BB4002DA3A9 /* LiquidFun.mm */; };
+		22C7BD141EC9A10900D7C573 /* Shaders.metal in Sources */ = {isa = PBXBuildFile; fileRef = 22C7BD131EC9A10900D7C573 /* Shaders.metal */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -215,6 +216,7 @@
 		22281EDB1EC96BB4002DA3A9 /* LiquidFun.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LiquidFun.h; sourceTree = "<group>"; };
 		22281EDC1EC96BB4002DA3A9 /* LiquidFun.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = LiquidFun.mm; sourceTree = "<group>"; };
 		22281EDE1EC96C50002DA3A9 /* Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
+		22C7BD131EC9A10900D7C573 /* Shaders.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = Shaders.metal; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -275,6 +277,7 @@
 				22281EDB1EC96BB4002DA3A9 /* LiquidFun.h */,
 				22281EDC1EC96BB4002DA3A9 /* LiquidFun.mm */,
 				22281EDE1EC96C50002DA3A9 /* Bridging-Header.h */,
+				22C7BD131EC9A10900D7C573 /* Shaders.metal */,
 			);
 			path = OrlyLiquidMetal;
 			sourceTree = "<group>";
@@ -547,6 +550,7 @@
 				TargetAttributes = {
 					22281D641EC96728002DA3A9 = {
 						CreatedOnToolsVersion = 8.3.2;
+						DevelopmentTeam = 5D8EE7CC3K;
 						ProvisioningStyle = Automatic;
 					};
 					22281D781EC96729002DA3A9 = {
@@ -613,6 +617,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				22C7BD141EC9A10900D7C573 /* Shaders.metal in Sources */,
 				22281E601EC967D1002DA3A9 /* b2BroadPhase.cpp in Sources */,
 				22281ED71EC967D1002DA3A9 /* b2ParticleSystem.cpp in Sources */,
 				22281ECE1EC967D1002DA3A9 /* b2PulleyJoint.cpp in Sources */,
@@ -822,6 +827,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 5D8EE7CC3K;
 				HEADER_SEARCH_PATHS = "$(SRCROOT)/OrlyLiquidMetal";
 				INFOPLIST_FILE = OrlyLiquidMetal/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -836,6 +842,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 5D8EE7CC3K;
 				HEADER_SEARCH_PATHS = "$(SRCROOT)/OrlyLiquidMetal";
 				INFOPLIST_FILE = OrlyLiquidMetal/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -919,6 +926,7 @@
 				22281D8F1EC96729002DA3A9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		22281D901EC96729002DA3A9 /* Build configuration list for PBXNativeTarget "OrlyLiquidMetalTests" */ = {
 			isa = XCConfigurationList;
@@ -927,6 +935,7 @@
 				22281D921EC96729002DA3A9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		22281D931EC96729002DA3A9 /* Build configuration list for PBXNativeTarget "OrlyLiquidMetalUITests" */ = {
 			isa = XCConfigurationList;
@@ -935,6 +944,7 @@
 				22281D951EC96729002DA3A9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
