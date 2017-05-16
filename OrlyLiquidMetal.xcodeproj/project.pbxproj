@@ -68,6 +68,8 @@
 		22281ED81EC967D1002DA3A9 /* b2VoronoiDiagram.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 22281E581EC967D1002DA3A9 /* b2VoronoiDiagram.cpp */; };
 		22281ED91EC967D1002DA3A9 /* b2Rope.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 22281E5B1EC967D1002DA3A9 /* b2Rope.cpp */; };
 		22281EDD1EC96BB4002DA3A9 /* LiquidFun.mm in Sources */ = {isa = PBXBuildFile; fileRef = 22281EDC1EC96BB4002DA3A9 /* LiquidFun.mm */; };
+		2245FB241ECAE15C003E6148 /* AudioKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2245FB231ECAE15C003E6148 /* AudioKit.framework */; };
+		2245FB251ECAE15C003E6148 /* AudioKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2245FB231ECAE15C003E6148 /* AudioKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		22C7BD141EC9A10900D7C573 /* Shaders.metal in Sources */ = {isa = PBXBuildFile; fileRef = 22C7BD131EC9A10900D7C573 /* Shaders.metal */; };
 /* End PBXBuildFile section */
 
@@ -87,6 +89,20 @@
 			remoteInfo = OrlyLiquidMetal;
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		2245FB261ECAE15C003E6148 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				2245FB251ECAE15C003E6148 /* AudioKit.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		22281D651EC96728002DA3A9 /* OrlyLiquidMetal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OrlyLiquidMetal.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -216,6 +232,7 @@
 		22281EDB1EC96BB4002DA3A9 /* LiquidFun.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LiquidFun.h; sourceTree = "<group>"; };
 		22281EDC1EC96BB4002DA3A9 /* LiquidFun.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = LiquidFun.mm; sourceTree = "<group>"; };
 		22281EDE1EC96C50002DA3A9 /* Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
+		2245FB231ECAE15C003E6148 /* AudioKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AudioKit.framework; sourceTree = "<group>"; };
 		22C7BD131EC9A10900D7C573 /* Shaders.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = Shaders.metal; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -224,6 +241,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2245FB241ECAE15C003E6148 /* AudioKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -247,6 +265,7 @@
 		22281D5C1EC96728002DA3A9 = {
 			isa = PBXGroup;
 			children = (
+				2245FB231ECAE15C003E6148 /* AudioKit.framework */,
 				22281D671EC96728002DA3A9 /* OrlyLiquidMetal */,
 				22281D7C1EC96729002DA3A9 /* OrlyLiquidMetalTests */,
 				22281D871EC96729002DA3A9 /* OrlyLiquidMetalUITests */,
@@ -492,6 +511,7 @@
 				22281D611EC96728002DA3A9 /* Sources */,
 				22281D621EC96728002DA3A9 /* Frameworks */,
 				22281D631EC96728002DA3A9 /* Resources */,
+				2245FB261ECAE15C003E6148 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -828,9 +848,18 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 5D8EE7CC3K;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				HEADER_SEARCH_PATHS = "$(SRCROOT)/OrlyLiquidMetal";
 				INFOPLIST_FILE = OrlyLiquidMetal/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Pods/AudioKit/AudioKit/Platforms/iOS/libs",
+					"$(PROJECT_DIR)/OrlyLiquidMetal/AudioKit/Platforms/iOS/libs",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.orly.OrlyLiquidMetal;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "OrlyLiquidMetal/Bridging-Header.h";
@@ -843,9 +872,18 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 5D8EE7CC3K;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				HEADER_SEARCH_PATHS = "$(SRCROOT)/OrlyLiquidMetal";
 				INFOPLIST_FILE = OrlyLiquidMetal/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Pods/AudioKit/AudioKit/Platforms/iOS/libs",
+					"$(PROJECT_DIR)/OrlyLiquidMetal/AudioKit/Platforms/iOS/libs",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.orly.OrlyLiquidMetal;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "OrlyLiquidMetal/Bridging-Header.h";

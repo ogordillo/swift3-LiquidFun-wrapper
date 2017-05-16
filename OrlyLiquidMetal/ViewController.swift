@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreMotion
+import AudioKit
 
 class ViewController: UIViewController {
 
@@ -29,11 +30,26 @@ class ViewController: UIViewController {
     
     let motionManager: CMMotionManager = CMMotionManager()
     
+
+    let microphone = AKMicrophone()
+    
+    var tracker : AKFrequencyTracker!
+    var silence : AKBooster!
+    
+    override func viewDidAppear(_ animated: Bool) {
+        AudioKit.output = silence
+        AudioKit.start()
+    }
+    
+   
     
     override func viewDidLoad() {
         LiquidFun.createWorld(withGravity: Vector2D(x: 0, y:-gravity))
         super.viewDidLoad()
-       
+        
+        tracker = AKFrequencyTracker.init(microphone, hopSize: 200, peakCount: 2000)
+        silence = AKBooster(tracker, gain:0)
+        
         particleSystem = LiquidFun.createParticleSystem(withRadius:particleRadius / ptmRatio, dampingStrength: 0.1, gravityScale: 1, density: 1.2)
         LiquidFun.setParticleLimitForSystem(particleSystem, maxParticles: 4500)
         
@@ -71,7 +87,13 @@ class ViewController: UIViewController {
                                                         LiquidFun.setGravity(Vector2D(x: gravityX, y: gravityY))
         })
         
+        
+
+        microphone.start()
+        
     }
+    
+ 
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -211,6 +233,10 @@ class ViewController: UIViewController {
             self.refreshVertexBuffer()
             self.render()
         }
+        
+        print(tracker.amplitude)
+        
+        
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -226,7 +252,17 @@ class ViewController: UIViewController {
         }
     }
     
-
+    @IBOutlet var audioInputPlot: EZAudioPlot!
+    func setupPlot() {
+        let plot = AKNodeOutputPlot(microphone, frame: audioInputPlot.bounds)
+        plot.plotType = .rolling
+        plot.shouldFill = true
+        plot.shouldMirror = true
+        plot.color = UIColor.blue
+        audioInputPlot.addSubview(plot)
+    }
+    
+    
 
 }
 
