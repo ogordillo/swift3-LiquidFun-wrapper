@@ -30,7 +30,12 @@ typedef struct Vector2D {
 
 + (void *)createParticleSystemWithRadius:(float)radius dampingStrength:(float)dampingStrength
                             gravityScale:(float)gravityScale density:(float)density;
+
+
 + (void)createParticleBoxForSystem:(void *)particleSystem
+                          position:(Vector2D)position size:(Size2D)size;
+
++ (void)createParticleSlinkyForSystem:(void *)particleSystem
                           position:(Vector2D)position size:(Size2D)size;
 
 + (int)particleCountForSystem:(void *)particleSystem;

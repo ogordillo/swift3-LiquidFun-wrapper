@@ -14,7 +14,7 @@ class ViewController: UIViewController {
 
     let gravity: Float = 150
     let ptmRatio: Float = 32.0
-    let particleRadius: Float = 4.75
+    let particleRadius: Float = 5
     var particleSystem: UnsafeMutableRawPointer!
     
     var device: MTLDevice! = nil
@@ -44,14 +44,15 @@ class ViewController: UIViewController {
    
     
     override func viewDidLoad() {
-        LiquidFun.createWorld(withGravity: Vector2D(x: 0, y:-gravity))
+        LiquidFun.createWorld(withGravity: Vector2D(x: -gravity, y:0))
         super.viewDidLoad()
         
         tracker = AKFrequencyTracker.init(microphone, hopSize: 200, peakCount: 2000)
         silence = AKBooster(tracker, gain:0)
         
-        particleSystem = LiquidFun.createParticleSystem(withRadius:particleRadius / ptmRatio, dampingStrength: 0.5, gravityScale: 1, density: 5)
-        LiquidFun.setParticleLimitForSystem(particleSystem, maxParticles: 2000)
+        particleSystem = LiquidFun.createParticleSystem(withRadius:particleRadius / ptmRatio, dampingStrength: 0.0, gravityScale: 1, density: 5)
+        LiquidFun.setParticleLimitForSystem(particleSystem, maxParticles: 2250)
+        
         
         
         let screenSize: CGSize = UIScreen.main.bounds.size
@@ -84,7 +85,7 @@ class ViewController: UIViewController {
                                                         let acceleration = accelerometerData?.acceleration
                                                         let gravityX = self.gravity * Float((acceleration?.x)!)
                                                         let gravityY = self.gravity * Float((acceleration?.y)!)
-                                                        LiquidFun.setGravity(Vector2D(x: gravityX, y: gravityY))
+                                                        
         })
         
         
@@ -170,11 +171,44 @@ class ViewController: UIViewController {
         memcpy(bufferPointer + float4x4Size + floatSize, &radius, floatSize)
     }
     
-    func buildRenderPipeline() {
+    func buildRenderPipeline(colorindex: Int = 0) {
         // 1
         let defaultLibrary = device.newDefaultLibrary()
-        let fragmentProgram = defaultLibrary?.makeFunction(name: "basic_fragment")
-        let vertexProgram = defaultLibrary?.makeFunction(name: "particle_vertex")
+        
+        var fragmentProgram = defaultLibrary?.makeFunction(name: "basic_yellow_fragment")
+        var vertexProgram = defaultLibrary?.makeFunction(name: "particle_vertex")
+        
+        switch colorindex {
+        case 0:
+            fragmentProgram = defaultLibrary?.makeFunction(name: "basic_yellow_fragment")
+            vertexProgram = defaultLibrary?.makeFunction(name: "particle_vertex")
+        case 1:
+            fragmentProgram = defaultLibrary?.makeFunction(name: "basic_green_fragment")
+            vertexProgram = defaultLibrary?.makeFunction(name: "particle_vertex")
+        case 2:
+            fragmentProgram = defaultLibrary?.makeFunction(name: "basic_red_fragment")
+            vertexProgram = defaultLibrary?.makeFunction(name: "particle_vertex")
+        case 3:
+            fragmentProgram = defaultLibrary?.makeFunction(name: "basic_blue_fragment")
+            vertexProgram = defaultLibrary?.makeFunction(name: "particle_vertex")
+        case 4:
+            fragmentProgram = defaultLibrary?.makeFunction(name: "basic_white_fragment")
+            vertexProgram = defaultLibrary?.makeFunction(name: "particle_vertex")
+        case 5:
+            fragmentProgram = defaultLibrary?.makeFunction(name: "basic_pink_fragment")
+            vertexProgram = defaultLibrary?.makeFunction(name: "particle_vertex")
+        case 6:
+            fragmentProgram = defaultLibrary?.makeFunction(name: "basic_orange_fragment")
+            vertexProgram = defaultLibrary?.makeFunction(name: "particle_vertex")
+        case 7:
+            fragmentProgram = defaultLibrary?.makeFunction(name: "basic_skyblue_fragment")
+            vertexProgram = defaultLibrary?.makeFunction(name: "particle_vertex")
+        default:
+            fragmentProgram =  defaultLibrary?.makeFunction(name: "basic_purple_fragment")
+            vertexProgram =  defaultLibrary?.makeFunction(name: "particle_vertex")
+            
+        }
+        
         
         // 2
         let pipelineDescriptor = MTLRenderPipelineDescriptor()
@@ -226,7 +260,7 @@ class ViewController: UIViewController {
         commandBuffer.commit()
     }
     
-    var fps = 6
+    var fps = 420
     
     func update(displayLink:CADisplayLink) {
         autoreleasepool {
@@ -234,9 +268,20 @@ class ViewController: UIViewController {
             self.refreshVertexBuffer()
             self.render()
         }
-        
-    self.emitparticler5000()
     
+    if(gravity2 == 0)
+    {
+    self.emitparticler5000()
+        }
+    
+    if(fps == 0)
+    {
+        fps = 420
+        var index = Int(random(0,9))
+        self.buildRenderPipeline(colorindex: index)
+    }
+        fps = fps - 1
+        
         
         
         
@@ -252,7 +297,7 @@ class ViewController: UIViewController {
         
         var normalizedamplitude = tracker.amplitude * 10 * 2
     
-        print(normalizedamplitude, normalizedfrequency, (100 / ptmRatio))
+        //print(normalizedamplitude, normalizedfrequency, (100 / ptmRatio))
         
         if(normalizedamplitude > 0.5){
         let position = Vector2D(x: Float(view.bounds.width - view.bounds.width + 100) / ptmRatio,
@@ -271,7 +316,7 @@ class ViewController: UIViewController {
     
     
     
-    
+    var gravity2 = 0
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         for touchObject in touches {
@@ -280,7 +325,34 @@ class ViewController: UIViewController {
                 let position = Vector2D(x: Float(touchLocation.x) / ptmRatio,
                                         y: Float(view.bounds.height - touchLocation.y) / ptmRatio)
                 let size = Size2D(width: 100 / ptmRatio, height: 100 / ptmRatio)
-                LiquidFun.createParticleBox(forSystem: particleSystem, position: position, size: size)
+                
+                LiquidFun.createParticleSlinky(forSystem: particleSystem, position: position, size: size)
+//                if(gravity2 == 0)
+//                {
+//                    gravity2 = 1
+//                    LiquidFun.setGravity(Vector2D(x: 0.0, y: -gravity))
+//                }
+//                else if(gravity2 == 1){
+//                    gravity2 = 2
+//                    LiquidFun.setGravity(Vector2D(x: gravity, y: 0.0))
+//                }
+//                else if(gravity2 == 2)
+//                {
+//                    gravity2 = 3
+//                    LiquidFun.setGravity(Vector2D(x: 0.0, y: gravity))
+//                }
+                if(gravity2 == 0)
+                {
+                    gravity2 = 1
+                    LiquidFun.setGravity(Vector2D(x: 0.0, y: 0.0))
+                }
+                else if(gravity2 == 1)
+                {
+                    gravity2 = 0
+                    LiquidFun.setGravity(Vector2D(x: -gravity, y: 0.0))
+                }
+                
+                
             }
             super.touchesBegan(touches, with: event)
         }
