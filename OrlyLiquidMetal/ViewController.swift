@@ -269,10 +269,9 @@ class ViewController: UIViewController {
             self.render()
         }
     
-    if(gravity2 == 0)
-    {
+    
     self.emitparticler5000()
-        }
+    
     
     if(fps == 0)
     {
@@ -298,12 +297,24 @@ class ViewController: UIViewController {
         var normalizedamplitude = tracker.amplitude * 10 * 2
     
         //print(normalizedamplitude, normalizedfrequency, (100 / ptmRatio))
-        
-        if(normalizedamplitude > 0.5){
-        let position = Vector2D(x: Float(view.bounds.width - view.bounds.width + 100) / ptmRatio,
-                                y: Float(view.bounds.height - CGFloat(normalizedfrequency)) / ptmRatio)
-        let size = Size2D(width: Float(normalizedamplitude), height: 100 / ptmRatio)
-        LiquidFun.createParticleBox(forSystem: particleSystem, position: position, size: size)
+        if(gravity2 == 0)
+        {
+            if(normalizedamplitude > 0.5)
+            {
+                let position = Vector2D(x: Float(view.bounds.width - view.bounds.width + 100) / ptmRatio,
+                                        y: Float(view.bounds.height - CGFloat(normalizedfrequency)) / ptmRatio)
+                let size = Size2D(width: Float(normalizedamplitude), height: 100 / ptmRatio)
+                LiquidFun.createParticleBox(forSystem: particleSystem, position: position, size: size)
+            }
+        }else{
+            if(normalizedamplitude > 0.5)
+            {
+                var thing =  Float(view.bounds.height) - Float(view.bounds.height / 2)
+            let position = Vector2D(x: Float(view.bounds.width - view.bounds.width/2) / ptmRatio,
+                                    y: Float(thing) / ptmRatio)
+            let size = Size2D(width: Float(normalizedamplitude), height: Float(normalizedamplitude))
+            LiquidFun.createParticleSlinky(forSystem: particleSystem, position: position, size: size)
+            }
         }
     }
     
