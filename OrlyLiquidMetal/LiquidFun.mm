@@ -34,10 +34,10 @@ static b2World *world;
 + (void)createParticleBoxForSystem:(void *)particleSystem
                           position:(Vector2D)position size:(Size2D)size {
     b2PolygonShape shape;
-    shape.SetAsBox(size.width * 0.5f, size.height * 0.5f);
+    shape.SetAsBox(size.width * 1.2f, size.height * 0.05f);
     
     b2ParticleGroupDef particleGroupDef;
-    particleGroupDef.flags = b2_waterParticle;
+    particleGroupDef.flags = b2_waterParticle | b2_tensileParticle;
     particleGroupDef.position.Set(position.x, position.y);
     particleGroupDef.shape = &shape;
     

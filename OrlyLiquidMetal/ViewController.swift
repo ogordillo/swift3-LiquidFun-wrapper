@@ -12,9 +12,9 @@ import AudioKit
 
 class ViewController: UIViewController {
 
-    let gravity: Float = 9.80665
+    let gravity: Float = 150
     let ptmRatio: Float = 32.0
-    let particleRadius: Float = 2
+    let particleRadius: Float = 4.75
     var particleSystem: UnsafeMutableRawPointer!
     
     var device: MTLDevice! = nil
@@ -50,8 +50,8 @@ class ViewController: UIViewController {
         tracker = AKFrequencyTracker.init(microphone, hopSize: 200, peakCount: 2000)
         silence = AKBooster(tracker, gain:0)
         
-        particleSystem = LiquidFun.createParticleSystem(withRadius:particleRadius / ptmRatio, dampingStrength: 0.1, gravityScale: 1, density: 1.2)
-        LiquidFun.setParticleLimitForSystem(particleSystem, maxParticles: 4500)
+        particleSystem = LiquidFun.createParticleSystem(withRadius:particleRadius / ptmRatio, dampingStrength: 0.5, gravityScale: 1, density: 5)
+        LiquidFun.setParticleLimitForSystem(particleSystem, maxParticles: 2000)
         
         
         let screenSize: CGSize = UIScreen.main.bounds.size
@@ -226,6 +226,7 @@ class ViewController: UIViewController {
         commandBuffer.commit()
     }
     
+    var fps = 6
     
     func update(displayLink:CADisplayLink) {
         autoreleasepool {
@@ -234,10 +235,43 @@ class ViewController: UIViewController {
             self.render()
         }
         
-        print(tracker.amplitude)
+    self.emitparticler5000()
+    
+        
         
         
     }
+    
+    func emitparticler5000()
+    {
+        
+        
+        var normalizedfrequency = tracker.frequency / 2000
+        normalizedfrequency = normalizedfrequency * 100
+        normalizedfrequency = normalizedfrequency * 10 * 3
+        
+        var normalizedamplitude = tracker.amplitude * 10 * 2
+    
+        print(normalizedamplitude, normalizedfrequency, (100 / ptmRatio))
+        
+        if(normalizedamplitude > 0.5){
+        let position = Vector2D(x: Float(view.bounds.width - view.bounds.width + 100) / ptmRatio,
+                                y: Float(view.bounds.height - CGFloat(normalizedfrequency)) / ptmRatio)
+        let size = Size2D(width: Float(normalizedamplitude), height: 100 / ptmRatio)
+        LiquidFun.createParticleBox(forSystem: particleSystem, position: position, size: size)
+        }
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         for touchObject in touches {
