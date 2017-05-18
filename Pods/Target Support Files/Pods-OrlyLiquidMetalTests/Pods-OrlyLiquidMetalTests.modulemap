@@ -1,0 +1,6 @@
+framework module Pods_OrlyLiquidMetalTests {
+  umbrella header "Pods-OrlyLiquidMetalTests-umbrella.h"
+
+  export *
+  module * { export * }
+}

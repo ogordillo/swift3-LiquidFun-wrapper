@@ -31,13 +31,30 @@ static b2World *world;
     return particleSystem;
 }
 
+
+
 + (void)createParticleBoxForSystem:(void *)particleSystem
+                          position:(Vector2D)position size:(Size2D)size {
+    b2PolygonShape shape;
+    shape.SetAsBox(size.width * 1.2f, size.height * 0.025f);
+    
+    b2ParticleGroupDef particleGroupDef;
+    particleGroupDef.flags =  b2_tensileParticle;
+    particleGroupDef.position.Set(position.x, position.y);
+    particleGroupDef.shape = &shape;
+    
+    ((b2ParticleSystem *)particleSystem)->CreateParticleGroup(particleGroupDef);
+}
+
+
++ (void)createParticleSlinkyForSystem:(void *)particleSystem
                           position:(Vector2D)position size:(Size2D)size {
     b2PolygonShape shape;
     shape.SetAsBox(size.width * 0.5f, size.height * 0.5f);
     
     b2ParticleGroupDef particleGroupDef;
-    particleGroupDef.flags = b2_waterParticle;
+    particleGroupDef.flags =  b2_tensileParticle;
+    
     particleGroupDef.position.Set(position.x, position.y);
     particleGroupDef.shape = &shape;
     
@@ -86,6 +103,7 @@ positionIterations:(int)positionIterations {
 }
 
 + (void)setGravity:(Vector2D)gravity {
+    
     world->SetGravity(b2Vec2(gravity.x, gravity.y));
 }
 
