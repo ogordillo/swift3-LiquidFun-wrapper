@@ -1,4 +1,4 @@
-# LiquidFun_Swift3_iOS
+# swift3-LiquidFun-wrapper
 
 iOS Swift3 Wrapper for Google liquidfun
 
