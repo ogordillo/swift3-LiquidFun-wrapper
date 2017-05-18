@@ -53,7 +53,7 @@ static b2World *world;
     shape.SetAsBox(size.width * 0.5f, size.height * 0.5f);
     
     b2ParticleGroupDef particleGroupDef;
-    particleGroupDef.flags =  b2_springParticle;
+    particleGroupDef.flags =  b2_tensileParticle;
     
     particleGroupDef.position.Set(position.x, position.y);
     particleGroupDef.shape = &shape;

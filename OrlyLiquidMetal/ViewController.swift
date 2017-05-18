@@ -44,7 +44,7 @@ class ViewController: UIViewController {
    
     
     override func viewDidLoad() {
-        LiquidFun.createWorld(withGravity: Vector2D(x: -gravity, y:0))
+        LiquidFun.createWorld(withGravity: Vector2D(x: 0.0, y:0))
         super.viewDidLoad()
         
         tracker = AKFrequencyTracker.init(microphone, hopSize: 200, peakCount: 2000)
@@ -296,19 +296,54 @@ class ViewController: UIViewController {
         
         var normalizedamplitude = tracker.amplitude * 10 * 2
     
-        //print(normalizedamplitude, normalizedfrequency, (100 / ptmRatio))
-        if(gravity2 == 0)
+        
+        
+        
+        
+        if(gravity2 == 1)
         {
-            if(normalizedamplitude > 0.5)
+            
+            
+            if(normalizedamplitude > 2.5)
             {
+                
+                
+                normalizedamplitude = normalizedamplitude / 4
+                
+                
+                if(normalizedfrequency > 625)
+                {
+                    normalizedfrequency = 625
+                }
+                
+                if(normalizedfrequency < 125)
+                {
+                    normalizedfrequency = 125
+                }
+                
                 let position = Vector2D(x: Float(view.bounds.width - view.bounds.width + 100) / ptmRatio,
                                         y: Float(view.bounds.height - CGFloat(normalizedfrequency)) / ptmRatio)
                 let size = Size2D(width: Float(normalizedamplitude), height: 100 / ptmRatio)
                 LiquidFun.createParticleBox(forSystem: particleSystem, position: position, size: size)
             }
         }else{
-            if(normalizedamplitude > 0.5)
+            
+            
+            if(normalizedamplitude > 2.5)
             {
+                normalizedamplitude = normalizedamplitude / 6
+                
+                if(normalizedfrequency > 625)
+                {
+                    normalizedfrequency = 625
+                }
+                
+                if(normalizedfrequency < 125)
+                {
+                    normalizedfrequency = 125
+                }
+                
+                
                 var thing =  Float(view.bounds.height) - Float(view.bounds.height / 2)
             let position = Vector2D(x: Float(view.bounds.width - view.bounds.width/2) / ptmRatio,
                                     y: Float(thing) / ptmRatio)
@@ -316,6 +351,8 @@ class ViewController: UIViewController {
             LiquidFun.createParticleSlinky(forSystem: particleSystem, position: position, size: size)
             }
         }
+        
+        print(normalizedamplitude, normalizedfrequency)
     }
     
     
@@ -355,12 +392,12 @@ class ViewController: UIViewController {
                 if(gravity2 == 0)
                 {
                     gravity2 = 1
-                    LiquidFun.setGravity(Vector2D(x: 0.0, y: 0.0))
+                    LiquidFun.setGravity(Vector2D(x: -gravity, y: 0.0))
                 }
                 else if(gravity2 == 1)
                 {
                     gravity2 = 0
-                    LiquidFun.setGravity(Vector2D(x: -gravity, y: 0.0))
+                    LiquidFun.setGravity(Vector2D(x: 0.0, y: 0.0))
                 }
                 
                 
